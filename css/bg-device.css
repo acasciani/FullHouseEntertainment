@@ -1,0 +1,525 @@
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* ----------- Galaxy S3 ----------- */
+
+/* Portrait and Landscape */
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* ----------- Galaxy S4 ----------- */
+
+/* Portrait and Landscape */
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* ----------- Galaxy S5 ----------- */
+
+/* Portrait and Landscape */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* ----------- HTC One ----------- */
+
+/* Portrait and Landscape */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* ----------- iPad mini ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* ----------- iPad 1 and 2 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+
+/* ----------- Galaxy Tab 10.1 ----------- */
+
+/* Portrait and Landscape */
+@media (min-device-width: 800px) and (max-device-width: 1280px) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media (max-device-width: 800px) and (orientation: portrait) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media (max-device-width: 1280px) and (orientation: landscape) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+
+/* ----------- Asus Nexus 7 ----------- */
+
+/* Portrait and Landscape */
+@media screen and (device-width: 601px) and (device-height: 906px) and (-webkit-min-device-pixel-ratio: 1.331) and (-webkit-max-device-pixel-ratio: 1.332) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media screen and (device-width: 601px) and (device-height: 906px) and (-webkit-min-device-pixel-ratio: 1.331) and (-webkit-max-device-pixel-ratio: 1.332) and (orientation: portrait) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media screen and (device-width: 601px) and (device-height: 906px) and (-webkit-min-device-pixel-ratio: 1.331) and (-webkit-max-device-pixel-ratio: 1.332) and (orientation: landscape) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+
+/* ----------- Kindle Fire HD 7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 800px) and (max-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 800px) and (max-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: portrait) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 800px) and (max-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: landscape) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* ----------- Kindle Fire HD 8.9" ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: portrait) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: landscape) {
+    .body {
+        background-color: #898989;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
