@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="PhotosModel" namespace="PhotosDAL" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="PhotosModel" backend="mysql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="PhotosDAL" default="true">
+      <orm:class name="PhotoSource" uniqueId="fdfe12ec-fb6f-4fee-bc68-6163b450fa6d">
+        <orm:table name="PhotoSources" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="SourceID" />
+          </orm:key-generator>
+          <orm:single-field field-name="_sourceID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_sourceID" property="SourceID" behavior="readwrite" uniqueId="8a42840d-c0d5-49da-be3b-a293f0fe599f" type="System.Int32">
+          <orm:column name="SourceID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_sourceName" property="SourceName" behavior="readwrite" uniqueId="58301da0-eb85-4d39-add6-102063d00d4e" type="System.String">
+          <orm:column name="SourceName" sql-type="varchar" nullable="false" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_photos" property="Photos" behavior="readwrite" uniqueId="388b7140-b89d-4702-b311-c7e5bf85b842" type="PhotosDAL.Photo">
+          <orm:collection element-class="PhotosDAL.Photo" inverse-field="_photoSource" order-by="" uniqueId="171370b4-88b8-49db-a41c-d92ff7c3e007" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Photo" uniqueId="e2c0a790-0913-4495-a286-3d71d4e74717">
+        <orm:table name="Photos" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="PhotoID" />
+          </orm:key-generator>
+          <orm:single-field field-name="_photoID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_photoID" property="PhotoID" behavior="readwrite" uniqueId="f55666c3-1404-4abc-b09a-a6566c79e83a" type="System.Int32">
+          <orm:column name="PhotoID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_sourcePhotoID" property="SourcePhotoID" behavior="readwrite" uniqueId="44f0d3ae-6fe3-42b9-956e-9e6e352abd03" type="System.String">
+          <orm:column name="SourcePhotoID" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_sourceID" property="SourceID" behavior="readwrite" uniqueId="a1827780-c52c-4dfa-a423-0cff6d6728b8" type="System.Int32">
+          <orm:column name="SourceID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_captured" property="Captured" behavior="readwrite" uniqueId="8faad59a-f2e6-4909-8f98-2a86108958e7" type="System.DateTime">
+          <orm:column name="Captured" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_photoDate" property="PhotoDate" behavior="readwrite" uniqueId="87506983-e343-459b-b153-766112865af4" type="System.DateTime">
+          <orm:column name="PhotoDate" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_localPath" property="LocalPath" behavior="readwrite" uniqueId="3dd51234-90c9-48f0-9ebf-d058650a3ade" type="System.String">
+          <orm:column name="LocalPath" sql-type="varchar" nullable="false" length="300" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_photoSource" property="PhotoSource" behavior="readwrite" uniqueId="1c0baf00-3ec0-40f0-952a-a454e8c4ed10" type="PhotosDAL.PhotoSource">
+          <orm:reference uniqueId="171370b4-88b8-49db-a41c-d92ff7c3e007" association-name="PhotoHasPhotoSource">
+            <orm:sharedfield name="_sourceID" target-class="PhotosDAL.PhotoSource" target-field="_sourceID" />
+            <orm:constraint name="ix_Photos_PhotoSources" delete-action="dbdefaultrule" destination-table="PhotoSources" />
+          </orm:reference>
+        </orm:field>
+        <orm:index name="ix_Photos_PhotoSources_idx">
+          <orm:columnMapping>
+            <orm:column name="SourceID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="PhotoSources">
+        <orm:column name="SourceID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="SourceName" sql-type="varchar" nullable="false" length="100" scale="0" ado-type="StringVariableLength" />
+      </orm:table>
+      <orm:table name="Photos">
+        <orm:column name="PhotoID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="SourcePhotoID" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="SourceID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="Captured" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="PhotoDate" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="LocalPath" sql-type="varchar" nullable="false" length="300" scale="0" ado-type="StringVariableLength" />
+        <orm:index name="ix_Photos_PhotoSources_idx">
+          <orm:columnMapping>
+            <orm:column name="SourceID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:constraint name="ix_Photos_PhotoSources" delete-action="dbdefaultrule" destination-table="PhotoSources">
+          <orm:column name="SourceID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>FullHouseEntertainmentConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Server=192.168.201.52;Database=FullHouseEntertainment;Uid=alex;Pwd=alex;</AppConfigConnectionString>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <ImplementISerializable>true</ImplementISerializable>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MySql</Backend>
+        <ProviderName>MySql.Data.MySqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="fdfe12ec-fb6f-4fee-bc68-6163b450fa6d" name="PhotoSource" namespace="PhotosDAL" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="SourceID">
+      <Property Id="8a42840d-c0d5-49da-be3b-a293f0fe599f" name="SourceID" type="Int32" label="SourceID : Int32" kind="Persistent" identity="true" fieldName="_sourceID" />
+      <Property Id="58301da0-eb85-4d39-add6-102063d00d4e" name="SourceName" label="SourceName : String" kind="Persistent" fieldName="_sourceName" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="f326e03d-df8c-4138-99f9-152b3c0f13b4">
+          <NavigationalProperty Id="388b7140-b89d-4702-b311-c7e5bf85b842" name="Photos" type="IList&lt;Photo&gt;" label="Photos : IList&lt;Photo&gt;" nullable="true" kind="Persistent" fieldName="_photos" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="e2c0a790-0913-4495-a286-3d71d4e74717" name="Photo" namespace="PhotosDAL" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="PhotoID">
+      <Property Id="f55666c3-1404-4abc-b09a-a6566c79e83a" name="PhotoID" type="Int32" label="PhotoID : Int32" kind="Persistent" identity="true" fieldName="_photoID" />
+      <Property Id="8faad59a-f2e6-4909-8f98-2a86108958e7" name="Captured" type="DateTime" label="Captured : DateTime" kind="Persistent" fieldName="_captured" />
+      <Property Id="3dd51234-90c9-48f0-9ebf-d058650a3ade" name="LocalPath" label="LocalPath : String" kind="Persistent" fieldName="_localPath" />
+      <Property Id="87506983-e343-459b-b153-766112865af4" name="PhotoDate" type="DateTime" label="PhotoDate : DateTime" kind="Persistent" fieldName="_photoDate" />
+      <Property Id="a1827780-c52c-4dfa-a423-0cff6d6728b8" name="SourceID" type="Int32" label="SourceID : Int32" kind="Persistent" fieldName="_sourceID" />
+      <Property Id="44f0d3ae-6fe3-42b9-956e-9e6e352abd03" name="SourcePhotoID" label="SourcePhotoID : String" kind="Persistent" fieldName="_sourcePhotoID" />
+      <AssociationTargets>
+        <Association Id="171370b4-88b8-49db-a41c-d92ff7c3e007" SourceMultiplicity="One" name="PhotoHasPhotoSource">
+          <DomainClassMoniker name="/PhotosModel/PhotoSource" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="96389946-c460-43cb-85d9-77f86bcc9587">
+              <NavigationalPropertyMoniker name="/PhotosModel/PhotoSource/Photos" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="f356eb83-6c6d-46df-bfbc-06b51843beed">
+              <NavigationalPropertyMoniker name="/PhotosModel/Photo/PhotoSource" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="fd1ae053-8b2c-46b1-a923-06e83d9e0ad2">
+          <NavigationalProperty Id="1c0baf00-3ec0-40f0-952a-a454e8c4ed10" name="PhotoSource" type="PhotoSource" label="PhotoSource : PhotoSource" nullable="true" kind="Persistent" fieldName="_photoSource" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="87142572-31ce-4eb2-8c9e-f4f668464599">
+      <domainContainer name="PhotosModel" namespace="PhotosDAL" showPropertiesCompartment="true">
+        <entitySetProperty name="PhotoSources" namespace="PhotosDAL" type="PhotoSource" label="PhotoSources : IQueryable&lt;PhotosDAL.PhotoSource&gt;" />
+        <entitySetProperty name="Photos" namespace="PhotosDAL" type="Photo" label="Photos : IQueryable&lt;PhotosDAL.Photo&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>
