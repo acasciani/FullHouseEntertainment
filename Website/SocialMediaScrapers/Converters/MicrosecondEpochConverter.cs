@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Converters;
 using System;
 
-namespace SocialMediaScrapers
+namespace SocialMediaScrapers.Converters
 {
     public class MicrosecondEpochConverter : DateTimeConverterBase
     {
@@ -17,7 +17,7 @@ namespace SocialMediaScrapers
         {
             if (reader.Value == null) { return null; }
 
-            return _epoch.AddMilliseconds(Convert.ToInt64(reader.Value) / 1000d);
+            return _epoch.AddSeconds(Convert.ToInt64(reader.Value));
         }
     }
 }

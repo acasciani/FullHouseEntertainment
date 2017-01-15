@@ -75,6 +75,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\Instagram\MediaTypeConverter.cs" />
+    <Compile Include="Converters\Instagram\TagConverter.cs" />
     <Compile Include="Converters\MicrosecondEpochConverter.cs" />
     <Compile Include="Instagram.cs" />
     <Compile Include="Models\Instagram\Media.cs" />
