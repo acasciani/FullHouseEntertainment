@@ -1,0 +1,8 @@
+﻿@model Website.Models.InstagramGallery
+
+@foreach (var media in Model.MediaItems)
+{
+    <a href="@media.Images.StandardResolution.Url" data-lightbox="@Model.DataLightboxElement" data-title="@(media.Caption != null && !string.IsNullOrWhiteSpace(media.Caption.Text) ? media.Caption.Text : "")">
+        <img src="@media.Images.Thumbnail.Url" height="100">
+    </a>
+}

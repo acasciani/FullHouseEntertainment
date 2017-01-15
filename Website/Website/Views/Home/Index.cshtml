@@ -1,5 +1,15 @@
-﻿@{
+﻿@using SocialMediaScrapers.Instagram.Model
+@using Website.Models
+
+@{
     ViewBag.Title = "Best DJs of Western NY";
+    ViewBag.ShowCarousel = true;
+
+
+    Media weddingCoverImage = ViewBag.WeddingCoverImage;
+    Media photoBoothCoverImage = ViewBag.PhotoBoothCoverImage;
+    Media corporatePartiesCoverImage = ViewBag.CorporatePartiesCoverImage;
+    Media otherServicesCoverImage = ViewBag.OtherServicesCoverImage;
 }
 
 <div class="row">
@@ -18,32 +28,38 @@
         <div class="row">
             <div class="col-sm-6 service">
                 <div>
-                    <a href="#" class="thumb">
-                        <img src="images/wedding.jpg" align="left" />
-                    </a>
+                    @if (weddingCoverImage != null)
+                    {
+                        <a href="@Url.Action("Weddings", "Services")" class="thumb">
+                            <img src="@weddingCoverImage.Images.LowResolution.Url" align="left" alt="Wedding Services" />
+                        </a>
+                    }
 
                     <h3 class="red">Weddings</h3>
                     <div class="price text-justify">We'll help you plan a reception that is so irresistibly fun that your guests will remember it for a long time to come. Our wedding package prices start at $999. Call us today to discuss your upcoming wedding.</div>
                     <div class="learnmore">
                         <a href="http://atowndj.com/wp-content/uploads/2013/09/Matt-Black-Synergetic-Sounds-Wedding-DJ.jpg" data-lightbox="wedding">Recent Photos <i class="fa fa-picture-o" aria-hidden="true"></i></a>
                         &nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="inner.html">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                        <a href="@Url.Action("Weddings", "Services")">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
             </div>
             <div class="col-sm-6 service">
                 <div>
-                    <a href="#" class="thumb">
-                        <img src="images/photo-booth.jpg" align="left" />
-                    </a>
+                    @if (photoBoothCoverImage != null)
+                    {
+                        <a href="@Url.Action("PhotoBooth", "Services")" class="thumb">
+                            <img src="@photoBoothCoverImage.Images.LowResolution.Url" align="left" alt="Photo Booth Services" />
+                        </a>
+                    }
 
                     <h3 class="red">Photo Booth</h3>
                     <div class="price text-justify">Efficent set up with an on-site attendant to assist. Included is unlimited 3/4/6-Pose B/W or Color Photo strips, personalized graphics on photos, props for added excitement and a scrap book option (additional fees may apply).</div>
                     <div class="learnmore">
                         <a href="http://www.fullhouse-ent.com/layout/fhe/userFiles/images/fullhouse-photo-booth-01.jpg" data-lightbox="photo-booth">Recent Photos <i class="fa fa-picture-o" aria-hidden="true"></i></a>
                         &nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="#">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                        <a href="@Url.Action("PhotoBooth", "Services")">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -52,66 +68,38 @@
         <div class="row">
             <div class="col-sm-6 service">
                 <div>
-                    <a href="#" class="thumb">
-                        <img src="images/corporate-party.jpg" align="left" />
-                    </a>
+                    @if (corporatePartiesCoverImage != null)
+                    {
+                        <a href="@Url.Action("CorporateParties", "Services")" class="thumb">
+                            <img src="@corporatePartiesCoverImage.Images.LowResolution.Url" align="left" alt="Coporate Parties Services" />
+                        </a>
+                    }
 
                     <h3 class="red">Corporate Parties</h3>
                     <div class="price text-justify">Have an upcoming corporate event or holiday party? We'd be able to assist. Our friendly and professional DJs and emcees will engage the crowd.</div>
                     <div class="learnmore">
                         <a href="#">Recent Photos <i class="fa fa-picture-o" aria-hidden="true"></i></a>
                         &nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="#">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                        <a href="@Url.Action("CorporateParties", "Services")">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
             </div>
             <div class="col-sm-6 service">
                 <div>
-                    <a href="#" class="thumb">
-                        <img src="images/private-party.jpg" align="left" />
-                    </a>
-
-                    <h3 class="red">Private Parties</h3>
-                    <div class="price text-justify">We look forward to working your next engagement party, bridal shower, or large family event.</div>
-                    <div class="learnmore">
-                        <a href="#">Recent Photos <i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                        &nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="#">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 service">
-                <div>
-                    <a href="#" class="thumb">
-                        <img src="images/casino-parties.jpg" align="left" />
-                    </a>
-
-                    <h3 class="red">Casino Parties</h3>
-                    <div class="price text-justify">Full House Entertainment has the right package for your event. From just a few people to 300, we can meet all your needs. Click below to learn more.</div>
-                    <div class="learnmore">
-                        <a href="#">Recent Photos <i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                        &nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="#">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="col-sm-6 service">
-                <div>
-                    <a href="#" class="thumb">
-                        <img src="images/other-services.jpg" align="left" />
-                    </a>
+                    @if (otherServicesCoverImage != null)
+                    {
+                        <a href="@Url.Action("OtherServices", "Services")" class="thumb">
+                            <img src="@otherServicesCoverImage.Images.LowResolution.Url" align="left" alt="Other Services" />
+                        </a>
+                    }
 
                     <h3 class="red">Other Services</h3>
                     <div class="price text-justify">Full House Entertainment offers additional services including game shows, video games, fundraising, custom monograms and foam parties. Click below to learn more.</div>
                     <div class="learnmore">
                         <a href="#">Recent Photos <i class="fa fa-picture-o" aria-hidden="true"></i></a>
                         &nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="#">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                        <a href="@Url.Action("OtherServices", "Services")">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="clearfix"></div>
                 </div>

@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.IsInnerPage = true;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts {
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.min.js"></script>
+}
+
+<div class="row">
+    <div class="col-sm-12 title-text">
+        @RenderBody()
+    </div>
+</div>
+
+@if (IsSectionDefined("WhatsIncluded"))
+{ 
+    <hr class="horizontal-line" />
+
+    <div class="row padding-bottom-15">
+        <div class="col-sm-12">
+            <h2 class="gold text-center"><em>What's Included</em></h2>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    @RenderSection("WhatsIncluded")
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (IsSectionDefined("Prices"))
+{
+    <hr class="horizontal-line" />
+
+    <div class="row contact-us">
+        <div class="col-sm-12">
+            <h2 class="gold text-center"><em>Prices</em></h2>
+
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    @RenderSection("Prices")
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (ViewBag.Gallery as Website.Models.InstagramGallery != null && ((Website.Models.InstagramGallery)ViewBag.Gallery).MediaItems.Count > 0)
+{
+    <hr class="horizontal-line" />
+
+    <div class="row photo-gallery">
+        <div class="col-sm-12">
+            <h2 class="gold text-center"><em>@ViewBag.GalleryTitle</em></h2>
+
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p>@ViewBag.GalleryDescription</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    @Html.Partial("Instagram/_IGGallery", (Website.Models.InstagramGallery)ViewBag.Gallery)
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -2,16 +2,16 @@
 	font-family: 'Alike Angular', serif;
 	color: #d9d9d9;
 	font-size: 16px;
-    background-color:rgba(0,0,0,.9);
+    background-color: black;
 }
 
 .body {
 	width: 100%;
 	border-top: white solid 1px;
-    background: -webkit-linear-gradient(top, rgba(0,0,0,.9) 0%, rgba(0,0,0,1)); /* For Safari 5.1 to 6.0 */
-    background: -moz-linear-gradient(top, rgba(0,0,0,.9) 0%, rgba(0,0,0,1)); /* For Firefox 3.6 to 15 */
-    background: -o-linear-gradient(top, rgba(0,0,0,.9) 0%, rgba(0,0,0,1)); /* For Opera 11.1 to 12.0 */
-    background: linear-gradient(top, rgba(0,0,0,.9) 0%, rgba(0,0,0,1)); /* Standard syntax (must be last)*/
+    background: -webkit-linear-gradient(top, rgba(255,255,255,.1) 0%, rgba(255,255,255,0)); /* For Safari 5.1 to 6.0 */
+    background: -moz-linear-gradient(top, rgba(255,255,255,.1) 0%, rgba(255,255,255,0)); /* For Firefox 3.6 to 15 */
+    background: -o-linear-gradient(top, rgba(255,255,255,.1)) 0%, rgba(255,255,255,0)); /* For Opera 11.1 to 12.0 */
+    background: linear-gradient(top, rgba(255,255,255,.1) 0%, rgba(255,255,255,0)); /* Standard syntax (must be last)*/
 }
 
 .navbar.top {
@@ -215,6 +215,10 @@ div.testimonial > .learnmore {
 
 /* areas */
 div.areas-served {
+	padding-bottom: 15px;
+}
+
+div.padding-bottom-15 {
 	padding-bottom: 15px;
 }
 

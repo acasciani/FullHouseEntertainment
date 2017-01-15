@@ -123,11 +123,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\Source\Scraped.cs" />
     <Compile Include="Controllers\Source\Scrapers.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\InstagramGallery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -181,15 +183,15 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\_TopCarousel.cshtml" />
+    <Content Include="Views\Shared\_InnerServicePage.cshtml" />
+    <Content Include="Views\Services\Weddings.cshtml" />
+    <Content Include="Views\Shared\Instagram\_IGGallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -221,13 +223,13 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53184</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50172/</IISUrl>
+          <IISUrl>http://localhost:50173/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
           </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
-          <servers defaultServer="SelfHostServer">
+          <servers defaultServer="">
             <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:50172/" workingDir="" />
           </servers>
         </WebProjectProperties>
