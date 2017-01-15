@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Website.Controllers.Source;
 
 namespace Website.Controllers
 {
@@ -16,8 +17,7 @@ namespace Website.Controllers
     {
         public ActionResult Index()
         {
-            SocialMediaScrapers.Instagram.Scraper ig = new SocialMediaScrapers.Instagram.Scraper();
-            ig.GetMedias("cashciani");
+            //var test = Scraped.InstagramMedia;
 
 
             return View();
