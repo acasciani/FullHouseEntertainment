@@ -1,0 +1,37 @@
+﻿@if (ViewBag.ShowCarousel != null && (bool)ViewBag.ShowCarousel)
+{
+
+}
+
+<div id="top-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#top-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#top-carousel" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item x-center y-center active" style="background-image: url(/Content/images/site/carousel/1.jpg)">
+            <img src="~/Content/images/site/transparent.png" alt="Full House Entertainment" />
+
+            <div class="carousel-caption">
+                <img src="~/Content/images/site/fhe-logo.png" /><br />
+                <h2>
+                    <strong>Perfect Entertainment</strong> <br />For All of Life's Special Events.
+                </h2>
+            </div>
+        </div>
+
+        <div class="item x-center y-center" style="background-image: url(/Content/images/site/carousel/2.jpg)">
+            <img src="~/Content/images/site/transparent.png" alt="Wedding Music Entertainment" />
+
+            <div class="carousel-caption">
+                <h2>
+                    <strong>Experts</strong> in wedding ceremonies
+                </h2>
+            </div>
+        </div>
+
+    </div>
+</div>

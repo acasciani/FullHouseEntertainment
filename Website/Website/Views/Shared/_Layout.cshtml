@@ -8,8 +8,6 @@
     <!-- Bootstrap -->
     @Styles.Render("~/Content/css")
     
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="css/bg-device.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Scope+One|Alike+Angular" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" rel="stylesheet" />
@@ -17,35 +15,50 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @{
+        Html.RenderPartial("_TopCarousel");
+    }
+
+    <div class="body">
+        <nav class="navbar navbar-default top" data-spy="affix">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Content/images/site/fhe-logo.png" height="100%" /></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="nav navbar-nav navbar-right">
+                    <a class="navbar-brand" href="https://www.facebook.com/FullHouseEntertainmentofRochesterNY/"><img src="~/Content/images/site/fb.png" height="100%" /></a>
+                    <a class="navbar-brand" href="#"><img src="~/Content/images/site/twitter.png" height="100%" /></a>
+                    <a class="navbar-brand" href="https://www.instagram.com/full_house_ent/"><img src="~/Content/images/site/instagram.png" height="100%" /></a>
+                    <a class="navbar-brand" href="tel:+15857380073">
+                        <i class="fa fa-phone-square" aria-hidden="true" style="font-size: 36px; line-height: 30px; color: white;"></i>
+                    </a>
+                </div>
+            </div><!-- /.container -->
+        </nav>
+
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
+            @RenderBody()
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
+        <nav class="navbar navbar-default bottom">
+            <div class="container">
+                <div class="navbar-header">
+                    Full House Entertainment - Farmington, NY
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="nav navbar-nav navbar-right hidden-xs">
+                    All Rights Reserved&nbsp;&nbsp;&copy; @DateTime.Now.Year
+                </div>
+            </div><!-- /.container -->
+        </nav>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/customScripts")
     @RenderSection("scripts", required: false)
 </body>
 </html>
