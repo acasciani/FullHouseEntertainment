@@ -83,12 +83,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WebsiteDAL\WebsiteDAL.csproj">
-      <Project>{4fd6d71a-cdbb-4783-bbb2-b97334aaa1e6}</Project>
-      <Name>WebsiteDAL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>

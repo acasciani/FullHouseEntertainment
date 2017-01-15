@@ -166,10 +166,12 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\TopNavigation.cshtml" />
+    <Content Include="Views\Shared\TopCarousel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\scraped\" />
+    <Folder Include="Content\images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -182,10 +184,6 @@
     <ProjectReference Include="..\SocialMediaScrapers\SocialMediaScrapers.csproj">
       <Project>{8afe3acf-b6e9-4525-a0d8-22dae4171322}</Project>
       <Name>SocialMediaScrapers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebsiteDAL\WebsiteDAL.csproj">
-      <Project>{4fd6d71a-cdbb-4783-bbb2-b97334aaa1e6}</Project>
-      <Name>WebsiteDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

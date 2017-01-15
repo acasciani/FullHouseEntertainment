@@ -45,7 +45,7 @@ namespace Website
                 .WithIdentity("dailyRun", "Instagram")
                 .WithDailyTimeIntervalSchedule(i => i
                     .OnEveryDay()
-                    .StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(22, 19))
+                    .StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(0, 0))
                     .EndingDailyAfterCount(1)
                     )
                 .Build();

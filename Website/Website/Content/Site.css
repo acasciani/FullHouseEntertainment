@@ -1,24 +1,331 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+	height: 100%;
+	font-family: 'Alike Angular', serif;
+	color: #d9d9d9;
+	font-size: 16px;
+
+    background: url(https://s18.postimg.org/3wjdjws2h/Full_House_Entertainment_2_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+
+html {
+	height: 100%;
+
+
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+/* header */
+header {
+	background: rgba(0,0,0,.8);
+	padding: 30px;
+	text-align: center;
+	width:600px;
+	max-width: 100%;
+	margin: 0px auto 50px auto;
+}
+header > img {
+	width: 430px;
+	max-width: 100%;
+}
+header > h2 {
+	color: rgb(219, 188, 25);
+	font-family: 'Scope One', serif;
+	font-style: italic;
+	font-size: 26px;
+	width: 430px;
+	max-width: 100%;
+	margin: 15px auto 0 auto;
+}
+.empty-header-fill {
+	height: 50%;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.body {
+	width: 100%;
+	background-color: white;
+
+	border-top: white solid 1px;
+
+    background: -webkit-linear-gradient(top, rgba(0,0,0,.8) 0%, rgba(0,0,0,1)); /* For Safari 5.1 to 6.0 */
+    background: -moz-linear-gradient(top, rgba(0,0,0,.8) 0%, rgba(0,0,0,1)); /* For Firefox 3.6 to 15 */
+    background: -o-linear-gradient(top, rgba(0,0,0,.8) 0%, rgba(0,0,0,1)); /* For Opera 11.1 to 12.0 */
+    background: linear-gradient(top, rgba(0,0,0,.8) 0%, rgba(0,0,0,1)); /* Standard syntax (must be last)*/
+}
+
+.navbar.top {
+           -webkit-transform: translate3d(0, 0, 0);
+       transform: translate3d(0, 0, 0);
+}
+
+nav.top {
+	background-color: black;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-radius: 0px;
+	border-color:rgba(255,255,255,.3);
+	z-index: 5000;
+}
+nav.top .navbar-brand {
+	padding: 10px 10px;
+}
+nav.top .navbar-right {
+    float: right!important;
+    margin-right: -15px;
+}
+nav.top .navbar-nav {
+    float: left;
+    margin: 0;
+}
+
+nav.top .container>.navbar-header {
+	margin-right: 0;
+    margin-left: 0;
+}
+nav.top .navbar-header {
+	float: left;
+}
+nav.top.navbar>.container .navbar-brand, nav.top.navbar>.container-fluid .navbar-brand {
+	margin-left: -10px;
+}
+nav.top {
+	top: 0;
+	width: 100%;
+}
+h1 {
+	margin-top: 80px;
+	font-weight: bold;
+	font-family: 'Scope One', serif;
+}
+h2 {
+	font-family: 'Scope One', serif;
+}
+
+.body {
+	padding-top: 71px;
+	z-index: 0;
+}
+nav.top.affix-top {
+	margin-top: -71px;
+}
+nav.top.affix {
+	margin-top: 0px;
+}
+
+.gold {
+	color: rgb(219, 188, 25);
+}
+.red {
+	color: rgb(255, 94, 132);
+}
+
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-justify {
+	text-align: justify;
+}
+
+/* services */
+div.service {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+div.service > div {
+	padding: 15px;
+  
+  position: relative;
+  z-index : 1;
+}
+
+div.service > div:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 25px;
+    width: 25px;
+    border-top: 3px solid rgba(255, 94, 132, .6);
+    border-left: 3px solid rgba(255, 94, 132, .6);
+}
+div.service > div:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 25px;
+    width: 25px;
+    border-bottom: 3px solid rgba(255, 94, 132, .6);
+    border-right: 3px solid rgba(255, 94, 132, .6);
+}
+
+div.service > div .thumb {
+	max-width: 125px;
+	max-height: 125px;
+}
+div.service > div .thumb > img {
+	border-radius: 65px;
+	border: solid 2px rgba(255, 255, 255, 1);
+	max-width: 125px;
+	max-height: 125px;
+	margin-right: 15px;
+}
+div.service > div h3 {
+	font-family: 'Scope One', serif;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 25px;
+	margin-top: 0px;
+}
+div.service > div .price {
+	margin-top: -25px;
+	margin-bottom: 25px;
+}
+div.service > div .learnmore {
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+}
+.learnmore a i, .learnmore-invert a i {
+	margin-left: 5px;
+}
+.learnmore a, .learnmore-invert a {
+	text-decoration: none;
+	font-style: italic;
+}
+.learnmore a {
+	color: rgba(217, 217, 217, 0.4);
+}
+.learnmore-invert a {
+	color: rgba(217, 217, 217, 0.8);
+}
+.learnmore a:hover {
+	color: rgba(217, 217, 217, 0.8);
+}
+.learnmore-invert a:hover {
+	color: rgba(217, 217, 217, 0.4);
+}
+
+.horizontal-line {
+	width: 80%;
+	border-color: rgba(255, 255, 255, 0.23);
+}
+
+
+
+/* testimonials */
+div.testimonials {
+	padding-bottom: 15px;
+}
+
+div.testimonial > .comment > div {
+	background-color: rgba(255, 255, 255, 0.1);
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 15px;
+	border-radius: 15px;
+}
+div.testimonial > .person {
+	margin-top: 0px;
+	margin-bottom: 15px;
+	padding-right: 40px;
+	font-style: italic;
+}
+div.testimonial > .person:after {
+	font-family: FontAwesome;
+	content: "\f075";
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+    height: 25px;
+    width: 25px;
+    text-align: right;
+}
+div.testimonial > .learnmore {
+	margin-bottom: 15px;
+}
+
+/* areas */
+div.areas-served {
+	padding-bottom: 15px;
+}
+
+/* contact us */
+div.contact-us {
+	padding-bottom: 15px;
+}
+
+
+.hidden {
+	display: none;
+}
+
+
+/* footer*/
+nav.bottom {
+	background-color: black;
+	border-bottom: none;
+	border-right: none;
+	border-left: none;
+	border-radius: 0px;
+	border-color:rgba(255,255,255,.3);
+	margin-bottom: 0px;
+	line-height: 50px;
+}
+@media(max-width:767px) {
+    nav.bottom .navbar-header {
+        text-align:center;
+    }
+}
+
+
+
+/* inner page */
+.body.inner > .container {
+	background-color: rgba(0,0,0,0.8);
+}
+.body.inner h1 {
+	margin-top: 20px;
+}
+
+
+
+/* alternating colored lists*/
+ul.colored > li:nth-child(odd) {
+	color: rgb(255, 158, 181);
+}
+
+ul.colored > li:nth-child(even) {
+	color: rgb(255, 238, 152);
+}
+
+ul.colored {
+	list-style: none;
+	padding-left: 0px;
+}
+
+.body.inner .title-text img {
+	border-radius: 100%;
+    border: solid 2px rgba(255, 255, 255, 1);
+}
+
+
+div.photo-gallery {
+	padding-bottom: 15px;
+}
+
+div.photo-gallery img {
+	margin: 10px;
+	border: solid 1px rgba(255, 255, 255, 1);
 }
