@@ -189,6 +189,9 @@
     <Content Include="Views\Shared\_InnerServicePage.cshtml" />
     <Content Include="Views\Services\Weddings.cshtml" />
     <Content Include="Views\Shared\Instagram\_IGGallery.cshtml" />
+    <Content Include="Views\Services\PhotoBooth.cshtml" />
+    <Content Include="Views\Services\CorporateParties.cshtml" />
+    <Content Include="Views\Services\OtherServices.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

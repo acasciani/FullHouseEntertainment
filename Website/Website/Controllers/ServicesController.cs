@@ -37,5 +37,65 @@ namespace Website.Controllers
 
             return View();
         }
+
+        private InstagramGallery _PhotoBoothGallery;
+        private InstagramGallery _PhotoBoothCover;
+        public ActionResult PhotoBooth()
+        {
+            if (_PhotoBoothGallery == null)
+            {
+                _PhotoBoothGallery = new InstagramGallery(new string[] { PhotoBoothTag });
+            }
+
+            if (_PhotoBoothCover == null)
+            {
+                _PhotoBoothCover = new InstagramGallery(new string[] { PhotoBoothTag, CoverImageTag });
+            }
+
+            ViewBag.Gallery = _PhotoBoothGallery;
+            ViewBag.CoverImage = _PhotoBoothCover;
+
+            return View();
+        }
+
+        private InstagramGallery _CorporatePartiesGallery;
+        private InstagramGallery _CorporatePartiesCover;
+        public ActionResult CorporateParties()
+        {
+            if (_CorporatePartiesGallery == null)
+            {
+                _CorporatePartiesGallery = new InstagramGallery(new string[] { CorporatePartyTag });
+            }
+
+            if (_CorporatePartiesCover == null)
+            {
+                _CorporatePartiesCover = new InstagramGallery(new string[] { CorporatePartyTag, CoverImageTag });
+            }
+
+            ViewBag.Gallery = _CorporatePartiesGallery;
+            ViewBag.CoverImage = _CorporatePartiesCover;
+
+            return View();
+        }
+
+        private InstagramGallery _OtherServicesGallery;
+        private InstagramGallery _OtherServicesCover;
+        public ActionResult OtherServices()
+        {
+            if (_OtherServicesGallery == null)
+            {
+                _OtherServicesGallery = new InstagramGallery(new string[] { OtherServicesTag });
+            }
+
+            if (_OtherServicesCover == null)
+            {
+                _OtherServicesCover = new InstagramGallery(new string[] { OtherServicesTag, CoverImageTag });
+            }
+
+            ViewBag.Gallery = _OtherServicesGallery;
+            ViewBag.CoverImage = _OtherServicesCover;
+
+            return View();
+        }
     }
 }

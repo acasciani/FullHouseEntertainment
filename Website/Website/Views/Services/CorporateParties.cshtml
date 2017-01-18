@@ -1,0 +1,66 @@
+﻿@using Website.Models
+@using SocialMediaScrapers.Instagram.Model
+
+@{
+    ViewBag.Title = "Corporate Parties";
+    ViewBag.GalleryTitle = "Corporate Parties Gallery";
+    ViewBag.GalleryDescription = "Click on an image below to view photos of our corporate parties.";
+
+    Media coverImage = null;
+    InstagramGallery coverImages = ViewBag.CoverImage as InstagramGallery;
+
+    if (coverImages != null)
+    {
+        coverImage = coverImages.MediaItems.Where(i => i.MediaType == MediaType.Image).OrderByDescending(i => i.CreateDate).FirstOrDefault();
+    }
+
+    Layout = "~/Views/Shared/_InnerServicePage.cshtml";
+}
+
+
+@section WhatsIncluded{
+    <div class="col-sm-12 text-center">
+        <p>
+            We're a full-service DJ Entertainment company. All our clients receive the following:
+        </p>
+    </div>
+    <div class="col-sm-12 text-center">
+        <ul class="colored">
+            <li>Room Appropriate Sound System</li>
+            <li>Lighting Tree with 4 Colored Lights</li>
+            <li>Unlimited Consultations</li>
+            <li>Professional MCs</li>
+            <li>Disc Jockey</li>
+            <li>24-hour access to online planning forms</li>
+            <li>Ability to manage evening far in advance of event</li>
+        </ul>
+    </div>
+}
+
+
+@section Prices{
+    <p>
+        Ready to plan your next big event? We're scheduling up for 2017 and want to help make your event a memorable one!
+    </p>
+    <p class="learnmore">
+        <a href="#">Schedule Your Free Consultation Today <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+    </p>
+}
+
+<h1 class="gold text-center">@ViewBag.Title</h1>
+@if (coverImage != null)
+{
+    <p class="text-center">
+        <img src="@coverImage.Images.LowResolution.Url" width="250" alt="@ViewBag.Title" />
+    </p>
+}
+<p class="text-justify">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam turpis risus, fermentum
+    vitae suscipit eget, pellentesque id purus. Nunc tempor id risus at dictum. Integer dictum lobortis metus, mollis hendrerit est
+    bibendum malesuada. Nulla accumsan, nisi nec placerat fermentum, risus ligula imperdiet magna, at bibendum nibh metus vitae elit.
+    Phasellus porttitor et odio nec mattis. Duis sed laoreet velit, pellentesque tristique lorem. Integer in mi aliquet, pharetra libero ut, hendrerit nunc.
+</p>
+<p class="text-justify">
+    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed eros lorem, elementum et velit sit amet, mattis pellentesque mauris.
+    Ut vestibulum porttitor urna eget sagittis. Mauris vestibulum tellus non placerat pellentesque.
+</p>
