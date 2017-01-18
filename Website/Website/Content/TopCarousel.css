@@ -105,3 +105,19 @@
 .carousel-fade .carousel-control {
   z-index: 2;
 }
+
+#top-carousel .carousel-caption > h2 {
+    font-size: 1.6em;
+}
+
+@media (max-width: 767px) {
+    #top-carousel .carousel-caption > h2 {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 499px) {
+    #top-carousel .carousel-caption > h2 {
+        font-size: 1.0em;
+    }
+}
