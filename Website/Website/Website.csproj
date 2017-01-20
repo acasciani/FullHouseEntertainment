@@ -123,9 +123,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManagementController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\Source\CustomUtils.cs" />
+    <Compile Include="Controllers\Source\FacebookScraperJob.cs" />
     <Compile Include="Controllers\Source\Scraped.cs" />
-    <Compile Include="Controllers\Source\Scrapers.cs" />
+    <Compile Include="Controllers\Source\InstagramScraperJob.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -133,6 +136,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\blueimp-gallery.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -141,6 +145,13 @@
     <Content Include="Content\images\site\carousel\2.jpg" />
     <Content Include="Content\images\site\fb.png" />
     <Content Include="Content\images\site\fhe-logo.png" />
+    <Content Include="Content\images\site\gallery\error.png" />
+    <Content Include="Content\images\site\gallery\error.svg" />
+    <Content Include="Content\images\site\gallery\loading.gif" />
+    <Content Include="Content\images\site\gallery\play-pause.png" />
+    <Content Include="Content\images\site\gallery\play-pause.svg" />
+    <Content Include="Content\images\site\gallery\video-play.png" />
+    <Content Include="Content\images\site\gallery\video-play.svg" />
     <Content Include="Content\images\site\instagram.png" />
     <Content Include="Content\images\site\transparent.png" />
     <Content Include="Content\images\site\twitter.png" />
@@ -158,11 +169,17 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\blueimp-gallery-fullscreen.js" />
+    <Content Include="Scripts\blueimp-gallery-indicator.js" />
+    <Content Include="Scripts\blueimp-gallery.min.js" />
+    <Content Include="Scripts\blueimp-helper.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.blueimp-gallery.js" />
+    <Content Include="Scripts\jquery.blueimp-gallery.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -192,6 +209,9 @@
     <Content Include="Views\Services\PhotoBooth.cshtml" />
     <Content Include="Views\Services\CorporateParties.cshtml" />
     <Content Include="Views\Services\OtherServices.cshtml" />
+    <Content Include="Views\Management\Index.cshtml" />
+    <Content Include="Views\Management\Ratings.cshtml" />
+    <Content Include="Views\Shared\_LayoutManagement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

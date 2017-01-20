@@ -1,4 +1,5 @@
-﻿using SocialMediaScrapers.Instagram.Model;
+﻿using SocialMediaScrapers.Facebook.Model;
+using SocialMediaScrapers.Instagram.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,13 +26,43 @@ namespace Website.Controllers.Source
             }
             set
             {
-                UpdateIGCache(value);   
+                UpdateIGCache(value);
             }
         }
 
         private static void UpdateIGCache(List<Media> medias)
         {
             HttpRuntime.Cache.Insert("Scraped_InstagramMedia", medias, null, DateTime.MaxValue, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.High, null);
+        }
+
+        public static List<Rating> FacebookRatings
+        {
+            get
+            {
+                List<Rating> ratings = HttpRuntime.Cache["Scraped_FacebookRatings"] as List<Rating>;
+                if (ratings == null)
+                {
+                    FacebookScraperJob job = new FacebookScraperJob();
+                    UpdateFBCache(job.GetRatings());
+                    ratings = HttpRuntime.Cache["Scraped_FacebookRatings"] as List<Rating>;
+                }
+
+                return ratings;
+            }
+            set
+            {
+                UpdateFBCache(value);
+            }
+        }
+
+        public static void RemoveFBCache()
+        {
+            HttpRuntime.Cache.Remove("Scraped_FacebookRatings");
+        }
+
+        private static void UpdateFBCache(List<Rating> ratings)
+        {
+            HttpRuntime.Cache.Insert("Scraped_FacebookRatings", ratings, null, DateTime.MaxValue, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.High, null);
         }
     }
 }

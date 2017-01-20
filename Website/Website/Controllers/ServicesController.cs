@@ -24,12 +24,12 @@ namespace Website.Controllers
         {
             if (_WeddingGallery == null)
             {
-                _WeddingGallery = new InstagramGallery(new string[] { WeddingTag });
+                _WeddingGallery = new InstagramGallery(50, new string[] { WeddingTag });
             }
 
             if (_WeddingCover == null)
             {
-                _WeddingCover = new InstagramGallery(new string[] { WeddingTag, CoverImageTag });
+                _WeddingCover = new InstagramGallery(1, new string[] { WeddingTag, CoverImageTag });
             }
 
             ViewBag.Gallery = _WeddingGallery;
@@ -44,12 +44,12 @@ namespace Website.Controllers
         {
             if (_PhotoBoothGallery == null)
             {
-                _PhotoBoothGallery = new InstagramGallery(new string[] { PhotoBoothTag });
+                _PhotoBoothGallery = new InstagramGallery(50, new string[] { PhotoBoothTag });
             }
 
             if (_PhotoBoothCover == null)
             {
-                _PhotoBoothCover = new InstagramGallery(new string[] { PhotoBoothTag, CoverImageTag });
+                _PhotoBoothCover = new InstagramGallery(1, new string[] { PhotoBoothTag, CoverImageTag });
             }
 
             ViewBag.Gallery = _PhotoBoothGallery;
@@ -64,12 +64,12 @@ namespace Website.Controllers
         {
             if (_CorporatePartiesGallery == null)
             {
-                _CorporatePartiesGallery = new InstagramGallery(new string[] { CorporatePartyTag });
+                _CorporatePartiesGallery = new InstagramGallery(50, new string[] { CorporatePartyTag });
             }
 
             if (_CorporatePartiesCover == null)
             {
-                _CorporatePartiesCover = new InstagramGallery(new string[] { CorporatePartyTag, CoverImageTag });
+                _CorporatePartiesCover = new InstagramGallery(1, new string[] { CorporatePartyTag, CoverImageTag });
             }
 
             ViewBag.Gallery = _CorporatePartiesGallery;
@@ -84,12 +84,12 @@ namespace Website.Controllers
         {
             if (_OtherServicesGallery == null)
             {
-                _OtherServicesGallery = new InstagramGallery(new string[] { OtherServicesTag });
+                _OtherServicesGallery = new InstagramGallery(50, new string[] { OtherServicesTag });
             }
 
             if (_OtherServicesCover == null)
             {
-                _OtherServicesCover = new InstagramGallery(new string[] { OtherServicesTag, CoverImageTag });
+                _OtherServicesCover = new InstagramGallery(1, new string[] { OtherServicesTag, CoverImageTag });
             }
 
             ViewBag.Gallery = _OtherServicesGallery;

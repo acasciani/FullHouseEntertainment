@@ -7,7 +7,7 @@ namespace Website.Models
 {
     public class InstagramGallery
     {
-        public InstagramGallery(params string[] tags)
+        public InstagramGallery(int limit, params string[] tags)
         {
             List<string> tagsClean = tags.Select(i => i.ToLower().Trim()).Distinct().ToList();
 
@@ -17,7 +17,7 @@ namespace Website.Models
                 if (tags.Count() == 0)
                 {
                     // return all
-                    MediaItems = instagramMedia.OrderByDescending(i => i.CreateDate).Take(50).ToList();
+                    MediaItems = instagramMedia.OrderByDescending(i => i.CreateDate).Take(limit).ToList();
                 }
                 else
                 {
@@ -25,7 +25,7 @@ namespace Website.Models
                         .Where(i => i.Caption != null && i.Caption.Tags != null)
                         .Where(i => i.Caption.Tags.Select(j => j.Trim().ToLower()).ToList().Intersect(tagsClean).Count() == tagsClean.Count())
                         .OrderByDescending(i => i.CreateDate)
-                        .Take(50)
+                        .Take(limit)
                         .ToList();
 
                     MediaItems = items;
@@ -41,5 +41,6 @@ namespace Website.Models
 
         public List<Media> MediaItems { get; private set; }
         public string DataLightboxElement { get; private set; }
+        public bool ShowOnlyFirstLink { get; set; }
     }
 }

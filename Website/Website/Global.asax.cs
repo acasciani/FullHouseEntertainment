@@ -33,6 +33,7 @@ namespace Website
             sched.Start();
 
             InstagramJob(sched);
+            FacebookJob(sched);
         }
 
         private void InstagramJob(IScheduler scheduler)
@@ -46,6 +47,24 @@ namespace Website
                 .WithDailyTimeIntervalSchedule(i => i
                     .OnEveryDay()
                     .StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(0, 0))
+                    .EndingDailyAfterCount(1)
+                    )
+                .Build();
+
+            scheduler.ScheduleJob(job, trigger);
+        }
+
+        private void FacebookJob(IScheduler scheduler)
+        {
+            IJobDetail job = JobBuilder.Create<FacebookScraperJob>()
+                .WithIdentity("GetRatings", "Facebook")
+                .Build();
+
+            ITrigger trigger = TriggerBuilder.Create()
+                .WithIdentity("dailyRun", "Facebook")
+                .WithDailyTimeIntervalSchedule(i => i
+                    .OnEveryDay()
+                    .StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(0, 5))
                     .EndingDailyAfterCount(1)
                     )
                 .Build();

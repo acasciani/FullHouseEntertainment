@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Full House Entertainment</title>
+
+    <!-- Bootstrap -->
+    @Styles.Render("~/Content/css")
+
+    <link href="https://fonts.googleapis.com/css?family=Scope+One|Alike+Angular" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @Html.ActionLink("Back to Management Page", "Index", "Management")
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/customScripts")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

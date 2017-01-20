@@ -10,6 +10,13 @@
     Media photoBoothCoverImage = ViewBag.PhotoBoothCoverImage;
     Media corporatePartiesCoverImage = ViewBag.CorporatePartiesCoverImage;
     Media otherServicesCoverImage = ViewBag.OtherServicesCoverImage;
+    
+    InstagramGallery weddingGallery = ViewBag.WeddingGallery;
+    InstagramGallery photoBoothGallery = ViewBag.PhotoBoothGallery;
+    InstagramGallery corporatePartiesGallery = ViewBag.CorporatePartiesGallery;
+    InstagramGallery otherServicesGallery = ViewBag.OtherServicesGallery;
+
+    List<SocialMediaScrapers.Facebook.Model.Rating> fbRatings = ViewBag.FacebookRatings;
 }
 
 <div class="row">
@@ -38,8 +45,11 @@
                     <h3 class="red">Weddings</h3>
                     <div class="price text-justify">We'll help you plan a reception that is so irresistibly fun that your guests will remember it for a long time to come. Our wedding package prices start at $999. Call us today to discuss your upcoming wedding.</div>
                     <div class="learnmore">
-                        <a href="http://atowndj.com/wp-content/uploads/2013/09/Matt-Black-Synergetic-Sounds-Wedding-DJ.jpg" data-lightbox="wedding">Recent Photos <i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        @if (weddingGallery != null && weddingGallery.MediaItems.Count() > 0)
+                        {
+                            @Html.Partial("Instagram/_IGGallery", weddingGallery)
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        }
                         <a href="@Url.Action("Weddings", "Services")">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="clearfix"></div>
@@ -57,8 +67,11 @@
                     <h3 class="red">Photo Booth</h3>
                     <div class="price text-justify">Efficent set up with an on-site attendant to assist. Included is unlimited 3/4/6-Pose B/W or Color Photo strips, personalized graphics on photos, props for added excitement and a scrap book option (additional fees may apply).</div>
                     <div class="learnmore">
-                        <a href="http://www.fullhouse-ent.com/layout/fhe/userFiles/images/fullhouse-photo-booth-01.jpg" data-lightbox="photo-booth">Recent Photos <i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        @if (photoBoothGallery != null && photoBoothGallery.MediaItems.Count() > 0)
+                        {
+                            @Html.Partial("Instagram/_IGGallery", photoBoothGallery)
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        }                        
                         <a href="@Url.Action("PhotoBooth", "Services")">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="clearfix"></div>
@@ -78,8 +91,11 @@
                     <h3 class="red">Corporate Parties</h3>
                     <div class="price text-justify">Have an upcoming corporate event or holiday party? We'd be able to assist. Our friendly and professional DJs and emcees will engage the crowd.</div>
                     <div class="learnmore">
-                        <a href="#">Recent Photos <i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        @if (corporatePartiesGallery != null && corporatePartiesGallery.MediaItems.Count() > 0)
+                        {
+                            @Html.Partial("Instagram/_IGGallery", corporatePartiesGallery)
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        }
                         <a href="@Url.Action("CorporateParties", "Services")">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="clearfix"></div>
@@ -97,8 +113,11 @@
                     <h3 class="red">Other Services</h3>
                     <div class="price text-justify">Full House Entertainment offers additional services including game shows, video games, fundraising, custom monograms and foam parties. Click below to learn more.</div>
                     <div class="learnmore">
-                        <a href="#">Recent Photos <i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        @if (otherServicesGallery != null && otherServicesGallery.MediaItems.Count() > 0)
+                        {
+                            @Html.Partial("Instagram/_IGGallery", otherServicesGallery)
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        }
                         <a href="@Url.Action("OtherServices", "Services")">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="clearfix"></div>
@@ -125,9 +144,6 @@
                 </p>
             </div>
         </div>
-
-
-
     </div>
 </div>
 
@@ -153,62 +169,35 @@
     </div>
 </div>
 
-<hr class="horizontal-line" />
+@if (fbRatings != null && fbRatings.Count() > 0)
+{
+    <hr class="horizontal-line" />
 
-<div class="row">
-    <div class="col-sm-12 testimonials">
-        <h2 class="gold text-center"><em>What Others Are Saying</em></h2>
+    <div class="row">
+        <div class="col-sm-12 testimonials">
+            <h2 class="gold text-center"><em>What Others Are Saying</em></h2>
 
-        <div class="row testimonial">
-            <div class="col-sm-12 comment">
-                <div>
-                    <div class="text-justify">I love Full House Entertainment. Definitely worth the investment. We have no regrets!</div>
+            @foreach (var fbRating in fbRatings)
+            {
+                <div class="row testimonial">
+                    <div class="col-sm-12 comment">
+                        <div>
+                            <div class="text-justify">@fbRating.ReviewText</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 person text-right">
+                        @fbRating.Reviewer.Name.GetFirstNameOnly()
+                    </div>
+                </div>
+            }
+
+            <div class="row testimonial">
+                <div class="col-sm-12 learnmore text-center">
+                    <a href="https://www.facebook.com/FullHouseEntertainmentofRochesterNY">View More Reviews on Facebook <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                 </div>
             </div>
-            <div class="col-sm-12 person text-right">
-                Danna X.
-            </div>
+
+
         </div>
-
-        <div class="row testimonial">
-            <div class="col-sm-12 comment">
-                <div>
-                    <div class="text-justify">Full House Entertainment is the real deal! Full House Entertainment should be nominated for service of the year.</div>
-                </div>
-            </div>
-            <div class="col-sm-12 person text-right">
-                Marlin
-            </div>
-        </div>
-
-        <div class="row testimonial">
-            <div class="col-sm-12 comment">
-                <div>
-                    <div class="text-justify">We've used Full House Entertainment for the last five years. Thank you so much for your help</div>
-                </div>
-            </div>
-            <div class="col-sm-12 person text-right">
-                Ermengarde O.
-            </div>
-        </div>
-
-        <div class="row testimonial">
-            <div class="col-sm-12 comment">
-                <div>
-                    <div class="text-justify">The service was excellent. Thank you for making it painless, pleasant and most of all hassle free!</div>
-                </div>
-            </div>
-            <div class="col-sm-12 person text-right">
-                Emily A.
-            </div>
-        </div>
-
-        <div class="row testimonial">
-            <div class="col-sm-12 learnmore text-center">
-                <a href="#">View More Reviews on Facebook <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-            </div>
-        </div>
-
-
     </div>
-</div>
+}
