@@ -48,4 +48,5 @@
 }
 .ww-review-comment-box {
     padding-top: 0px !important;
+    line-height: initial !important;
 }
