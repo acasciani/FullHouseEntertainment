@@ -17,9 +17,9 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -141,9 +141,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\images\site\awards\wnymea.jpg" />
-    <Content Include="Content\images\site\carousel\1.jpg" />
-    <Content Include="Content\images\site\carousel\2.jpg" />
+    <Content Include="Content\images\site\awards\wnymea-min.jpg" />
+    <Content Include="Content\images\site\carousel\1-min.jpg" />
+    <Content Include="Content\images\site\carousel\2-min.jpg" />
     <Content Include="Content\images\site\fb.png" />
     <Content Include="Content\images\site\fhe-logo.png" />
     <Content Include="Content\images\site\gallery\error.png" />

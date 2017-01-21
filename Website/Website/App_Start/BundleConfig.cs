@@ -27,7 +27,10 @@ namespace Website
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css"
+                      "~/Content/bootstrap.css",
+                      "~/Content/Site.css",
+                      "~/Content/topcarousel.css",
+                      "~/Content/widget-customization.css"
                       ));
         }
     }

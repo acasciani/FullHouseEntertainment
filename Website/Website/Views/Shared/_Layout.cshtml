@@ -8,13 +8,12 @@
     <!-- Bootstrap -->
     @Styles.Render("~/Content/css")
 
-    <link href="~/Content/Site.css" rel="stylesheet" />
-    <link href="~/Content/topcarousel.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/blueimp-gallery.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Scope+One|Alike+Angular" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" rel="stylesheet" />
+    <link href="favicon.ico" rel="shortcut icon">
+
 
     @RenderSection("styles", required: false)
 
@@ -155,7 +154,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/customScripts")
-    @RenderSection("scripts", required: false)
     <script src="~/Scripts/jquery.blueimp-gallery.min.js"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>
