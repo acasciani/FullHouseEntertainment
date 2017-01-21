@@ -108,17 +108,13 @@ namespace Website.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Awards()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Affiliates()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

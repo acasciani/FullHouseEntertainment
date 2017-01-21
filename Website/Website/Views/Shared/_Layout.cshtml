@@ -29,16 +29,18 @@
         <nav class="navbar navbar-default top" data-spy="affix">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Content/images/site/fhe-logo.png" height="100%" /></a>
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")" title="Full House Entertainment"><img src="~/Content/images/site/fhe-logo.png" height="100%" alt="Full House Entertainment" /></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="nav navbar-nav navbar-right">
-                    <a class="navbar-brand" href="https://www.facebook.com/FullHouseEntertainmentofRochesterNY/"><img src="~/Content/images/site/fb.png" height="100%" /></a>
-                    <a class="navbar-brand" href="#"><img src="~/Content/images/site/twitter.png" height="100%" /></a>
-                    <a class="navbar-brand" href="https://www.instagram.com/full_house_ent/"><img src="~/Content/images/site/instagram.png" height="100%" /></a>
-                    <a class="navbar-brand" href="tel:+15857380073">
-                        <i class="fa fa-phone-square" aria-hidden="true" style="font-size: 36px; line-height: 30px; color: white;"></i>
+                    <a class="navbar-brand" title="Visit us on Facebook" href="https://www.facebook.com/FullHouseEntertainmentofRochesterNY/"><img src="~/Content/images/site/fb.png" height="100%" alt="Facebook" /></a>
+                    <a class="navbar-brand" title="Visit us on Instagram" href="https://www.instagram.com/full_house_ent/"><img src="~/Content/images/site/instagram.png" height="100%" alt="Instagram" /></a>
+                    <a class="navbar-brand" href="/#contact-us" title="Contact us">
+                        <i class="fa fa-phone" aria-hidden="true" style="font-size: 36px; line-height: 30px; color: white;"></i>
+                    </a>
+                    <a class="navbar-brand" data-toggle="modal" data-target="#CustomerLoginModal" style="cursor:pointer;" title="Existing customer login">
+                        <i class="fa fa-sign-in" aria-hidden="true" style="font-size: 36px; line-height: 30px; color: white;"></i>
                     </a>
                 </div>
             </div><!-- /.container -->
@@ -71,6 +73,84 @@
         <a class="play-pause"></a>
         <ol class="indicator"></ol>
     </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="CustomerLoginModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form action="https://www.gigbuilder.com/cal/ny/fullhouseentertainment.nsf/api_clientlogin?createdocument" method="post" name="clientlogin" target="wedjbride" onsubmit="window.open('','wedjbride','width=720,height=510,left=10, status=yes, top=10, resizable=no, scrollbars=yes')">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Customer Login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <p><em>If you experience issues with login or forgot your password, please <a href="/#contact-us" title="Contact us" onclick="$('#CustomerLoginModal').modal('toggle')">contact us</a>.</em></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <label for="exampleInputEmail1">Event Date</label>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-4">
+                                            <select name="Month" id="Month" class="form-control">
+                                                <option value="0" selected="selected" disabled="disabled">--Month--</option>
+                                                <option value="1">January</option>
+                                                <option value="2">February</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">May</option>
+                                                <option value="6">June</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-sm-3 col-xs-4">
+                                            <select name="Day" id="Day" class="form-control">
+                                                <option selected="selected" disabled="disabled">--Day--</option>
+                                                @for (int i = 1; i <= 31; i++)
+                                                {
+                                                    <option>@i</option>
+                                                }
+                                            </select>
+                                        </div>
+
+                                        <div class="col-sm-3 col-xs-4">
+                                            <select name="Year" id="Year" class="form-control">
+                                                <option selected="selected" disabled="disabled">--Year--</option>
+                                                @for (int i = 0; i < 6; i++)
+                                                {
+                                                    <option>@((DateTime.Today.Year - 1) + i)</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input name="Password" type="password" id="Password" placeholder="Password" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Login Modal -->
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

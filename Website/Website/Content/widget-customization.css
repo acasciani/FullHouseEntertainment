@@ -1,0 +1,51 @@
+﻿.ww-reviews-widget{
+    max-width: none !important;
+    border: none !important;
+}
+.ww-reviews-header-box {
+    display:none;
+}
+
+.ww-reviews-box {
+    border-top: none !important;
+    background: none !important;
+}
+
+.ww-review-box-outer {
+    background: none !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    padding: 15px !important;
+    border-radius: 15px !important;
+    margin: 15px 0 !important;
+}
+
+.ww-review-box-outer .ww-bbot,.ww-review-box-outer .ww-btop {
+    display: none !important;
+}
+.ww-review-content{
+    padding: 0px !important;
+}
+.ww-review-box {
+    background:none !important;
+}
+
+.ww-review-content {
+    color: #d9d9d9 !important;
+    font-size: 16px !important;
+    font-family: 'Alike Angular', serif !important;
+}
+.ww-review-content a {
+    color: rgb(219, 188, 25) !important;
+}
+.ww-review-content a:hover {
+    color: rgb(219, 188, 25) !important;
+}
+.ww-review-score-box {
+    display: none !important;
+}
+.ww-reviews-footer {
+    display: none !important;
+}
+.ww-review-comment-box {
+    padding-top: 0px !important;
+}

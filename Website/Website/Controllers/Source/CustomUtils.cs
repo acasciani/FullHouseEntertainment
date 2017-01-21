@@ -19,5 +19,10 @@ namespace Website
                 return parts[0].Trim();
             }
         }
+
+        public static string TakeFirstNCharacters(this string raw, int N, bool AddEllipsis = true)
+        {
+            return (raw.Length < N) ? raw : raw.Substring(0, N) + (AddEllipsis ? "..." : "");
+        }
     }
 }

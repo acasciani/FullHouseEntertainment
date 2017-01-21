@@ -19,6 +19,10 @@
     List<SocialMediaScrapers.Facebook.Model.Rating> fbRatings = ViewBag.FacebookRatings;
 }
 
+@section styles{
+    <link href="~/Content/widget-customization.css" rel="stylesheet" />
+}
+
 <div class="row">
     <div class="col-sm-12">
         <h1 class="gold text-center">Full House Entertainment</h1>
@@ -78,6 +82,7 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-sm-6 service">
                 <div>
@@ -130,6 +135,26 @@
 
 <hr class="horizontal-line" />
 
+<div class="row padding-bottom-15">
+    <div class="col-sm-12">
+        <h2 class="gold text-center"><em>Awards & Recognition</em></h2>
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <p>
+                    <img alt="Wedding Wire Couples' Choice Awards 2017" src="//www.weddingwire.com/assets/badges/BCA-2017/BCA2017-logo.png" height="124" />
+                    <img alt="Western New York Mobile Entertainment Alliance" src="~/Content/images/site/awards/wnymea.jpg" height="124" />
+                </p>
+                <p class="learnmore">
+                    <a href="@Url.Action("Awards","Home")">View all our Awards & Recognition <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="horizontal-line" />
+
 <div class="row areas-served">
     <div class="col-sm-12">
         <h2 class="gold text-center"><em>Areas We Serve</em></h2>
@@ -140,14 +165,14 @@
                     We proudly serve clients in Monroe County, Wayne County and Ontario County.
                 </p>
                 <p class="learnmore">
-                    <a href="#">Check out some of the vendors we work with <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                    <a href="@Url.Action("Affiliates", "Home")">Check out some of the vendors we work with <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-<hr class="horizontal-line" />
+<hr class="horizontal-line" id="contact-us" />
 
 <div class="row contact-us">
     <div class="col-sm-12">
@@ -161,6 +186,25 @@
                 <p class="learnmore">
                     <a href="#">Schedule Your Free Consultation Today <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                 </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <table class="contact-info text-left">
+                    <tr>
+                        <td><i class="glyphicon glyphicon-earphone" title="Phone number"></i></td>
+                        <td><a href="tel:+15857380073">(585) 738-0073</a></td>
+                    </tr>
+                    <tr>
+                        <td><i class="glyphicon glyphicon-envelope" title="Email address"></i></td>
+                        <td><a href="mailto:general@fullhouse-ent.com">general@fullhouse-ent.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><i class="glyphicon glyphicon-map-marker" title="Postal address"></i></td>
+                        <td>Farmington, New York</td>
+                    </tr>
+                </table>
             </div>
         </div>
 
@@ -182,22 +226,36 @@
                 <div class="row testimonial">
                     <div class="col-sm-12 comment">
                         <div>
-                            <div class="text-justify">@fbRating.ReviewText</div>
+                            <div class="text-left">@fbRating.ReviewText.TakeFirstNCharacters(160)</div>
+                            <div class="text-right person">- <strong><em>@fbRating.Reviewer.Name.GetFirstNameOnly()</em></strong></div>
                         </div>
-                    </div>
-                    <div class="col-sm-12 person text-right">
-                        @fbRating.Reviewer.Name.GetFirstNameOnly()
                     </div>
                 </div>
             }
 
-            <div class="row testimonial">
+            <div class="row">
                 <div class="col-sm-12 learnmore text-center">
-                    <a href="https://www.facebook.com/FullHouseEntertainmentofRochesterNY">View More Reviews on Facebook <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/FullHouseEntertainmentofRochesterNY" target="_blank">View More Reviews on Facebook <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-sm-12">
+                    <script src='//www.weddingwire.com/assets/vendor/widgets/my-reviews.js' type='application/javascript'></script>
+                    <div class='ww-reset ww-reviews-widget' id='ww-widget-reviews'>
+                        <div class='ww-reviews-placeholder'></div>
+                    </div>
+                    <script>
+                        WeddingWire.createReview({ "vendorId": "37a973a4f2e7269b", "id": "ww-widget-reviews" });
+                    </script>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="col-sm-12 learnmore text-center">
+                    <a href="https://www.weddingwire.com/reviews/full-house-entertainment-farmington/37a973a4f2e7269b.html" target="_blank">View More Reviews on WeddingWire <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
         </div>
     </div>
 }

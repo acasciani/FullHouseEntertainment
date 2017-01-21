@@ -26,7 +26,7 @@ nav.top {
 	border-left: none;
 	border-radius: 0px;
 	border-color:rgba(255,255,255,.3);
-	z-index: 5000;
+	z-index: 2;
 }
 nav.top .navbar-brand {
 	padding: 10px 10px;
@@ -186,10 +186,13 @@ div.testimonials {
 	padding-bottom: 15px;
 }
 
+div.row.testimonial {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 div.testimonial > .comment > div {
 	background-color: rgba(255, 255, 255, 0.1);
-	margin-top: 15px;
-	margin-bottom: 15px;
 	padding: 15px;
 	border-radius: 15px;
 }
@@ -289,4 +292,31 @@ div.photo-gallery {
 div.photo-gallery img {
 	margin: 10px;
 	border: solid 1px rgba(255, 255, 255, 1);
+}
+
+img {
+    max-width: 100%;
+}
+
+p.caption {
+    margin-top: -10px;
+    font-style: italic;
+    font-size: .8em;
+}
+
+.contact-us .contact-info {
+    margin:auto;
+}
+.contact-us .contact-info td {
+    padding: 10px;
+}
+.contact-us .contact-info a, .contact-us .contact-info a:hover {
+    color:#d9d9d9;
+    text-decoration: none;
+}
+
+
+/*login modal*/
+#CustomerLoginModal {
+    color: #333;
 }
