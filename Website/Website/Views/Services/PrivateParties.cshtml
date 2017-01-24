@@ -1,0 +1,59 @@
+﻿@using Website.Models
+@using SocialMediaScrapers.Instagram.Model
+
+@{
+    ViewBag.Title = "Private Parties";
+    ViewBag.GalleryTitle = "Private Parties Gallery";
+    ViewBag.GalleryDescription = "Click on an image below to view photos of our private parties.";
+
+    Media coverImage = null;
+    InstagramGallery coverImages = ViewBag.CoverImage as InstagramGallery;
+
+    if (coverImages != null)
+    {
+        coverImage = coverImages.MediaItems.Where(i => i.MediaType == MediaType.Image).OrderByDescending(i => i.CreateDate).FirstOrDefault();
+    }
+
+    Layout = "~/Views/Shared/_InnerServicePage.cshtml";
+}
+
+@section Testimonial{
+    <div class="text-center">
+        <p>
+            <em>
+                The party was a huge success! My guests loved it and are still calling to tell me what a great time they had.
+                I have to tell you that many have said that it was the best party they had ever been to. My husband had a blast and will always remember his 50th birthday forever.
+                You should be very proud of your company and your employees. I have never worked with a group that was so professional and accommodating.
+                The dealers were all so friendly and fun and of course the DJ knew just how to keep the excitement brewing. Thank you again for the fun evening and great entertainment.
+            </em>
+        </p>
+    </div>
+    <div class="text-right">
+        - <strong><em>Coleen</em></strong>
+    </div>
+}
+
+
+<h1 class="gold text-center">@ViewBag.Title</h1>
+@if (coverImage != null)
+{
+    <p class="text-center">
+        <img src="@coverImage.Images.LowResolution.Url" width="250" alt="@ViewBag.Title" />
+    </p>
+}
+<p class="text-center">
+    Our team of professional event specialist will work with your venue, on all of the details, so that you can relax and enjoy YOUR special day.
+    And don't worry about your guests, our DJ's and emcees know how to jump-start your party and get your guests out of their seats and onto the dance floor.
+</p>
+<p class="text-center">
+    Looking for something special to add a little excitement to your party? Check out all of the services we have to offer.
+</p>
+
+<p class="text-center learnmore">
+    <a href="OtherServices/#casino-services">Casino Services</a><br />
+    <a href="OtherServices/#lighting-services">Lighting Effects</a><br />
+    <a href="OtherServices/#monograms-services">Custom Monogramming</a><br />
+    <a href="OtherServices/#gameshows-services">Game Shows</a><br />
+    <a href="OtherServices/#fundraising-services">Fundraising</a><br />
+    <a href="OtherServices/#rentals-services">Rentals</a>
+</p>

@@ -14,12 +14,12 @@ namespace Website.Controllers
     {
         private static Media _WeddingCoverImage;
         private static Media _PhotoBoothCoverImage;
-        private static Media _CorporatePartiesCoverImage;
+        private static Media _PrivatePartiesCoverImage;
         private static Media _OtherServicesCoverImage;
 
         private static InstagramGallery _WeddingGallery;
         private static InstagramGallery _PhotoBoothGallery;
-        private static InstagramGallery _CorporatePartiesGallery;
+        private static InstagramGallery _PrivatePartiesGallery;
         private static InstagramGallery _OtherServicesGallery;
 
         private static List<SocialMediaScrapers.Facebook.Model.Rating> _FacebookRatings;
@@ -33,11 +33,11 @@ namespace Website.Controllers
                 _FacebookRatings=null;
                 _WeddingCoverImage = null;
                 _PhotoBoothCoverImage = null;
-                _CorporatePartiesCoverImage = null;
+                _PrivatePartiesCoverImage = null;
                 _OtherServicesCoverImage = null;
                 _WeddingGallery = null;
                 _PhotoBoothGallery = null;
-                _CorporatePartiesGallery = null;
+                _PrivatePartiesGallery = null;
                 _OtherServicesGallery = null;
                 _StaticUpdates = DateTime.UtcNow.AddHours(6);
             }
@@ -54,10 +54,10 @@ namespace Website.Controllers
                 _PhotoBoothCoverImage = scrapedCovers.MediaItems.Where(i => i.MediaType == MediaType.Image).OrderByDescending(i => i.CreateDate).FirstOrDefault();
             }
 
-            if (_CorporatePartiesCoverImage == null)
+            if (_PrivatePartiesCoverImage == null)
             {
-                var scrapedCovers = new InstagramGallery(1, ServicesController.CorporatePartyTag, ServicesController.CoverImageTag);
-                _CorporatePartiesCoverImage = scrapedCovers.MediaItems.Where(i => i.MediaType == MediaType.Image).OrderByDescending(i => i.CreateDate).FirstOrDefault();
+                var scrapedCovers = new InstagramGallery(1, ServicesController.PrivatePartyTag, ServicesController.CoverImageTag);
+                _PrivatePartiesCoverImage = scrapedCovers.MediaItems.Where(i => i.MediaType == MediaType.Image).OrderByDescending(i => i.CreateDate).FirstOrDefault();
             }
 
             if (_OtherServicesCoverImage == null)
@@ -76,10 +76,10 @@ namespace Website.Controllers
                 _PhotoBoothGallery = new InstagramGallery(10, ServicesController.PhotoBoothTag);
                 _PhotoBoothGallery.ShowOnlyFirstLink = true;
             }
-            if (_CorporatePartiesGallery == null)
+            if (_PrivatePartiesGallery == null)
             {
-                _CorporatePartiesGallery = new InstagramGallery(10, ServicesController.CorporatePartyTag);
-                _CorporatePartiesGallery.ShowOnlyFirstLink = true;
+                _PrivatePartiesGallery = new InstagramGallery(10, ServicesController.PrivatePartyTag);
+                _PrivatePartiesGallery.ShowOnlyFirstLink = true;
             }
             if (_OtherServicesGallery == null)
             {
@@ -89,12 +89,12 @@ namespace Website.Controllers
 
             ViewBag.WeddingCoverImage = _WeddingCoverImage;
             ViewBag.PhotoBoothCoverImage = _PhotoBoothCoverImage;
-            ViewBag.CorporatePartiesCoverImage = _CorporatePartiesCoverImage;
+            ViewBag.PrivatePartiesCoverImage = _PrivatePartiesCoverImage;
             ViewBag.OtherServicesCoverImage = _OtherServicesCoverImage;
 
             ViewBag.WeddingGallery = _WeddingGallery;
             ViewBag.PhotoBoothGallery = _PhotoBoothGallery;
-            ViewBag.CorporatePartiesGallery = _CorporatePartiesGallery;
+            ViewBag.PrivatePartiesGallery = _PrivatePartiesGallery;
             ViewBag.OtherServicesGallery = _OtherServicesGallery;
 
             // facebook ratings

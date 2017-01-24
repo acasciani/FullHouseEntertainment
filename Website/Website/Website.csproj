@@ -154,6 +154,18 @@
     <Content Include="Content\images\site\gallery\video-play.png" />
     <Content Include="Content\images\site\gallery\video-play.svg" />
     <Content Include="Content\images\site\instagram.png" />
+    <Content Include="Content\images\site\rentals\dance-floor-lighting.jpg" />
+    <Content Include="Content\images\site\rentals\gas-fryer.jpg" />
+    <Content Include="Content\images\site\rentals\portable-dance-floor-2.jpg" />
+    <Content Include="Content\images\site\rentals\portable-dance-floor.jpg" />
+    <Content Include="Content\images\site\rentals\projection-screen.jpg" />
+    <Content Include="Content\images\site\rentals\sound-system.jpg" />
+    <Content Include="Content\images\site\rentals\speaker-system.jpg" />
+    <Content Include="Content\images\site\rentals\spot-lights.jpg" />
+    <Content Include="Content\images\site\rentals\wireless-handheld-microphone.jpg" />
+    <Content Include="Content\images\site\rentals\wireless-lapel-microphone.jpg" />
+    <Content Include="Content\images\site\rentals\wireless-microphones.jpg" />
+    <Content Include="Content\images\site\rentals\work-lights.jpg" />
     <Content Include="Content\images\site\transparent.png" />
     <Content Include="Content\images\site\twitter.png" />
     <Content Include="Content\TopCarousel.css" />
@@ -210,13 +222,14 @@
     <Content Include="Views\Services\Weddings.cshtml" />
     <Content Include="Views\Shared\Instagram\_IGGallery.cshtml" />
     <Content Include="Views\Services\PhotoBooth.cshtml" />
-    <Content Include="Views\Services\CorporateParties.cshtml" />
+    <Content Include="Views\Services\PrivateParties.cshtml" />
     <Content Include="Views\Services\OtherServices.cshtml" />
     <Content Include="Views\Management\Index.cshtml" />
     <Content Include="Views\Management\Ratings.cshtml" />
     <Content Include="Views\Shared\_LayoutManagement.cshtml" />
     <Content Include="Views\Home\Awards.cshtml" />
     <Content Include="Views\Home\Affiliates.cshtml" />
+    <Content Include="Views\Services\Rentals.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -65,3 +65,20 @@
         </div>
     </div>
 }
+
+@if (IsSectionDefined("Testimonial"))
+{
+    <hr class="horizontal-line" />
+    
+    <div class="row">
+        <div class="col-sm-12 testimonials">
+            <div class="row testimonial">
+                <div class="col-sm-12 comment">
+                    <div>
+                        @RenderSection("Testimonial")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

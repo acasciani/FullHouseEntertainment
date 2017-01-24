@@ -15,7 +15,7 @@ namespace Website.Controllers
         public static string CoverImageTag = ConfigurationManager.AppSettings["CoverImageTag"];
         public static string WeddingTag = ConfigurationManager.AppSettings["WeddingTag"];
         public static string PhotoBoothTag = ConfigurationManager.AppSettings["PhotoBoothTag"];
-        public static string CorporatePartyTag = ConfigurationManager.AppSettings["CorporatePartyTag"];
+        public static string PrivatePartyTag = ConfigurationManager.AppSettings["PrivatePartyTag"];
         public static string OtherServicesTag = ConfigurationManager.AppSettings["OtherServicesTag"];
 
         private InstagramGallery _WeddingGallery; // work to make static?
@@ -24,7 +24,7 @@ namespace Website.Controllers
         {
             if (_WeddingGallery == null)
             {
-                _WeddingGallery = new InstagramGallery(50, new string[] { WeddingTag });
+                _WeddingGallery = new InstagramGallery(20, new string[] { WeddingTag });
             }
 
             if (_WeddingCover == null)
@@ -58,22 +58,22 @@ namespace Website.Controllers
             return View();
         }
 
-        private InstagramGallery _CorporatePartiesGallery;
-        private InstagramGallery _CorporatePartiesCover;
-        public ActionResult CorporateParties()
+        private InstagramGallery _PrivatePartiesGallery;
+        private InstagramGallery _PrivatePartiesCover;
+        public ActionResult PrivateParties()
         {
-            if (_CorporatePartiesGallery == null)
+            if (_PrivatePartiesGallery == null)
             {
-                _CorporatePartiesGallery = new InstagramGallery(50, new string[] { CorporatePartyTag });
+                _PrivatePartiesGallery = new InstagramGallery(10, new string[] { PrivatePartyTag });
             }
 
-            if (_CorporatePartiesCover == null)
+            if (_PrivatePartiesCover == null)
             {
-                _CorporatePartiesCover = new InstagramGallery(1, new string[] { CorporatePartyTag, CoverImageTag });
+                _PrivatePartiesCover = new InstagramGallery(1, new string[] { PrivatePartyTag, CoverImageTag });
             }
 
-            ViewBag.Gallery = _CorporatePartiesGallery;
-            ViewBag.CoverImage = _CorporatePartiesCover;
+            ViewBag.Gallery = _PrivatePartiesGallery;
+            ViewBag.CoverImage = _PrivatePartiesCover;
 
             return View();
         }
@@ -84,7 +84,7 @@ namespace Website.Controllers
         {
             if (_OtherServicesGallery == null)
             {
-                _OtherServicesGallery = new InstagramGallery(50, new string[] { OtherServicesTag });
+                _OtherServicesGallery = new InstagramGallery(20, new string[] { OtherServicesTag });
             }
 
             if (_OtherServicesCover == null)
@@ -95,6 +95,11 @@ namespace Website.Controllers
             ViewBag.Gallery = _OtherServicesGallery;
             ViewBag.CoverImage = _OtherServicesCover;
 
+            return View();
+        }
+
+        public ActionResult Rentals()
+        {
             return View();
         }
     }

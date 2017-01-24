@@ -8,12 +8,12 @@
 
     Media weddingCoverImage = ViewBag.WeddingCoverImage;
     Media photoBoothCoverImage = ViewBag.PhotoBoothCoverImage;
-    Media corporatePartiesCoverImage = ViewBag.CorporatePartiesCoverImage;
+    Media privatePartiesCoverImage = ViewBag.PrivatePartiesCoverImage;
     Media otherServicesCoverImage = ViewBag.OtherServicesCoverImage;
     
     InstagramGallery weddingGallery = ViewBag.WeddingGallery;
     InstagramGallery photoBoothGallery = ViewBag.PhotoBoothGallery;
-    InstagramGallery corporatePartiesGallery = ViewBag.CorporatePartiesGallery;
+    InstagramGallery privatePartiesGallery = ViewBag.PrivatePartiesGallery;
     InstagramGallery otherServicesGallery = ViewBag.OtherServicesGallery;
 
     List<SocialMediaScrapers.Facebook.Model.Rating> fbRatings = ViewBag.FacebookRatings;
@@ -22,9 +22,70 @@
 <div class="row">
     <div class="col-sm-12">
         <h1 class="gold text-center">Full House Entertainment</h1>
-        <p class="text-justify">We'll help you plan a reception that is so irresistibly fun that your guests will remember it for a long time to come. <span class="">We know how to read a crowd. We know how to motivate guests of all ages onto the dance floor and keep them there. And best of all, we do it in a way that is classy and will not embarrass you or your guests.</span> <span class="">Our professional MCs will announce all the events of the day with elegance and flair. We will coordinate everything with your other wedding vendors so you don't have to worry about a thing. After the many months of planning, you will actually be able to leave your reception in our experienced hands so you can relax and have fun.</span></p>
+        <p class="text-center" style="font-weight:bold;font-size:1.2em;">
+            Ensure that your wedding or special event is a night to remember!
+        </p>
+        <p class="text-center">
+            Known as Upstate New York’s premier entertainment specialists, Full House Entertainment promises you the most unique night of your life. 
+            We pride ourselves on ensuring that you and your guests have FUN while we take care of the rest. 
+            We have gained the reputation of exceeding our client's expectations, so let us exceed yours!
+        </p>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <p>
+            Planning your event?  Enter that date of your event below and check if we are available.
+        </p>
+    </div>
+</div>
+
+<div class="row padding-bottom-15">
+    <div class="col-sm-12 text-center">
+        <form action="https://www.gigbuilder.com/cal/ny/fullhouseentertainment.nsf/checkdates" method="post" name="checkdate" class="form-inline" target="_blank">
+            <input type="hidden" name="service" value="0" />
+            <div class="form-group">
+                <select name="Month" class="form-control">
+                    <option value="0" disabled="disabled" selected="selected">Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select name="Day" class="form-control">
+                    <option selected="selected" disabled="disabled">Day</option>
+                    @for (int i = 1; i <= 31; i++)
+                    {
+                        <option>@i</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <select name="Year" class="form-control">
+                    <option selected="selected" disabled="disabled">Year</option>
+                    @for (int i = 0; i < 4; i++)
+                    {
+                        <option>@DateTime.Today.AddYears(i).Year</option>
+                    }
+                </select>
+            </div>
+            <button type="submit" class="btn btn-default">Check Availability</button>
+        </form>
+    </div>
+</div>
+
+
 
 <hr class="horizontal-line" />
 
@@ -43,14 +104,15 @@
                     }
 
                     <h3 class="red">Weddings</h3>
-                    <div class="price text-justify">We'll help you plan a reception that is so irresistibly fun that your guests will remember it for a long time to come. Our wedding package prices start at $999. Call us today to discuss your upcoming wedding.</div>
+                    <div class="price text-justify">Weddings are our specialty!  Whether you are planning a formal black-tie affair or an informal reception, 
+                    we'll help you make it so irresistibly fun that your guests will remember it for a long time to come.</div>
                     <div class="learnmore">
                         @if (weddingGallery != null && weddingGallery.MediaItems.Count() > 0)
                         {
                             @Html.Partial("Instagram/_IGGallery", weddingGallery)
                             <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                         }
-                        <a href="@Url.Action("Weddings", "Services")">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                        <a href="@Url.Action("Weddings", "Services")">Learn More <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -65,14 +127,14 @@
                     }
 
                     <h3 class="red">Photo Booth</h3>
-                    <div class="price text-justify">Efficent set up with an on-site attendant to assist. Included is unlimited 3/4/6-Pose B/W or Color Photo strips, personalized graphics on photos, props for added excitement and a scrap book option (additional fees may apply).</div>
+                    <div class="price text-justify">Capture all of the fun and memories from your special day by adding a photo booth to your event!</div>
                     <div class="learnmore">
                         @if (photoBoothGallery != null && photoBoothGallery.MediaItems.Count() > 0)
                         {
                             @Html.Partial("Instagram/_IGGallery", photoBoothGallery)
                             <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                         }                        
-                        <a href="@Url.Action("PhotoBooth", "Services")">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                        <a href="@Url.Action("PhotoBooth", "Services")">Learn More <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -82,22 +144,23 @@
         <div class="row">
             <div class="col-sm-6 service">
                 <div>
-                    @if (corporatePartiesCoverImage != null)
+                    @if (privatePartiesCoverImage != null)
                     {
-                        <a href="@Url.Action("CorporateParties", "Services")" class="thumb">
-                            <img src="@corporatePartiesCoverImage.Images.LowResolution.Url" align="left" alt="Coporate Parties Services" />
+                        <a href="@Url.Action("PrivateParties", "Services")" class="thumb">
+                            <img src="@privatePartiesCoverImage.Images.LowResolution.Url" align="left" alt="Coporate Party Services" />
                         </a>
                     }
 
-                    <h3 class="red">Corporate Parties</h3>
-                    <div class="price text-justify">Have an upcoming corporate event or holiday party? We'd be able to assist. Our friendly and professional DJs and emcees will engage the crowd.</div>
+                    <h3 class="red">Private Parties</h3>
+                    <div class="price text-justify">Have an upcoming private event, holiday or family party? 
+                    No matter what you are planning, our friendly and professional DJs and emcees will engage the crowd and make your event special.</div>
                     <div class="learnmore">
-                        @if (corporatePartiesGallery != null && corporatePartiesGallery.MediaItems.Count() > 0)
+                        @if (privatePartiesGallery != null && privatePartiesGallery.MediaItems.Count() > 0)
                         {
-                            @Html.Partial("Instagram/_IGGallery", corporatePartiesGallery)
+                            @Html.Partial("Instagram/_IGGallery", privatePartiesGallery)
                             <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                         }
-                        <a href="@Url.Action("CorporateParties", "Services")">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                        <a href="@Url.Action("PrivateParties", "Services")">Learn More <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -112,145 +175,21 @@
                     }
 
                     <h3 class="red">Other Services</h3>
-                    <div class="price text-justify">Full House Entertainment offers additional services including game shows, video games, fundraising, custom monograms and foam parties. Click below to learn more.</div>
+                    <div class="price text-justify">Full House Entertainment offers additional services including casino events, 
+                    lighting effects w/custom monogramming, game shows, and fundraising.</div>
                     <div class="learnmore">
                         @if (otherServicesGallery != null && otherServicesGallery.MediaItems.Count() > 0)
                         {
                             @Html.Partial("Instagram/_IGGallery", otherServicesGallery)
                             <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                         }
-                        <a href="@Url.Action("OtherServices", "Services")">Learn more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                        <a href="@Url.Action("OtherServices", "Services")">Learn More <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
             </div>
         </div>
 
-    </div>
-</div>
-
-<hr class="horizontal-line" />
-
-<div class="row padding-bottom-15">
-    <div class="col-sm-12">
-        <h2 class="gold text-center"><em>Awards & Recognition</em></h2>
-
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <p>
-                    <img alt="Wedding Wire Couples' Choice Awards 2017" src="//www.weddingwire.com/assets/badges/BCA-2017/BCA2017-logo.png" height="90" />
-                    <img alt="Western New York Mobile Entertainment Alliance" src="~/Content/images/site/awards/wnymea-min.jpg" height="90" />
-                </p>
-                <p class="learnmore">
-                    <a href="@Url.Action("Awards","Home")">View all our Awards & Recognition <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<hr class="horizontal-line" />
-
-<div class="row areas-served">
-    <div class="col-sm-12">
-        <h2 class="gold text-center"><em>Areas We Serve</em></h2>
-
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <p>
-                    We proudly serve clients in Monroe County, Wayne County and Ontario County.
-                </p>
-                <p class="learnmore">
-                    <a href="@Url.Action("Affiliates", "Home")">Check out some of the vendors we work with <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<hr class="horizontal-line" id="contact-us" />
-
-<div class="row contact-us">
-    <div class="col-sm-12">
-        <h2 class="gold text-center"><em>Contact Us</em></h2>
-
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <p>
-                    Ready to plan your next big event? We're scheduling up for 2017 and want to help make your event a memorable one! Enter that date of your event below and check if we 
-                    are available.
-                </p>
-            </div>
-        </div>
-
-        <div class="row padding-bottom-15">
-            <div class="col-sm-12 text-center">
-                <form action="https://www.gigbuilder.com/cal/ny/fullhouseentertainment.nsf/checkdates" method="post" name="checkdate" class="form-inline" target="_blank">
-                    <input type="hidden" name="service" value="0" />
-                    <div class="form-group">
-                        <select name="Month" class="form-control">
-                            <option value="0" disabled="disabled" selected="selected">Month</option>
-                            <option value="1">January</option>
-                            <option value="2">February</option>
-                            <option value="3">March</option>
-                            <option value="4">April</option>
-                            <option value="5">May</option>
-                            <option value="6">June</option>
-                            <option value="7">July</option>
-                            <option value="8">August</option>
-                            <option value="9">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <select name="Day" class="form-control">
-                            <option selected="selected" disabled="disabled">Day</option>
-                            @for (int i = 1; i <= 31; i++)
-                            {
-                                <option>@i</option>
-                            }
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <select name="Year" class="form-control">
-                            <option selected="selected" disabled="disabled">Year</option>
-                            @for (int i = 0; i < 4; i++)
-                            {
-                                <option>@DateTime.Today.AddYears(i).Year</option>
-                            }
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-default">Check Availability</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <p>Have a general question that you need answered? Please see below for our contact information:</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <table class="contact-info text-left">
-                    <tr>
-                        <td><i class="glyphicon glyphicon-earphone" title="Phone number"></i></td>
-                        <td><a href="tel:+15857380073">(585) 738-0073</a></td>
-                    </tr>
-                    <tr>
-                        <td><i class="glyphicon glyphicon-envelope" title="Email address"></i></td>
-                        <td><a href="mailto:general@fullhouse-ent.com">general@fullhouse-ent.com</a></td>
-                    </tr>
-                    <tr>
-                        <td><i class="glyphicon glyphicon-map-marker" title="Postal address"></i></td>
-                        <td>Farmington, New York</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -300,3 +239,75 @@
         </div>
     </div>
 }
+
+<hr class="horizontal-line" />
+
+<div class="row padding-bottom-15">
+    <div class="col-sm-12">
+        <h2 class="gold text-center"><em>Awards & Recognition</em></h2>
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <p>
+                    <img alt="Wedding Wire Couples' Choice Awards 2017" src="//www.weddingwire.com/assets/badges/BCA-2017/BCA2017-logo.png" height="90" />
+                    <img alt="Western New York Mobile Entertainment Alliance" src="~/Content/images/site/awards/wnymea-min.jpg" height="90" />
+                </p>
+                <p class="learnmore">
+                    <a href="@Url.Action("Awards","Home")">View all our Awards & Recognition <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="horizontal-line" />
+
+<div class="row areas-served">
+    <div class="col-sm-12">
+        <h2 class="gold text-center"><em>Areas We Serve</em></h2>
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <p>
+                    We proudly serve clients in Monroe County, Ontario County, Seneca County, and Wayne County.
+                </p>
+                <p class="learnmore">
+                    <a href="@Url.Action("Affiliates", "Home")">Check out some of the preferred vendors/venues we work with <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="horizontal-line" id="contact-us" />
+
+<div class="row contact-us">
+    <div class="col-sm-12">
+        <h2 class="gold text-center"><em>Contact Us</em></h2>
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <p>Have a general question that you need answered? Please see below for our contact information:</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <table class="contact-info text-left">
+                    <tr>
+                        <td><i class="glyphicon glyphicon-earphone" title="Phone number"></i></td>
+                        <td><a href="tel:+15857380073">(585) 738-0073</a></td>
+                    </tr>
+                    <tr>
+                        <td><i class="glyphicon glyphicon-envelope" title="Email address"></i></td>
+                        <td><a href="mailto:info@fullhouse-ent.com">info@fullhouse-ent.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><i class="glyphicon glyphicon-map-marker" title="Postal address"></i></td>
+                        <td>Farmington, New York</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
