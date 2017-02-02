@@ -40,84 +40,90 @@
 
 
 @section Prices{
-    <p>
-        Ready to plan your next big event? We're scheduling up for 2017 and want to help make your event a memorable one!
-    </p>
-<div class="row padding-bottom-15">
-    <div class="col-sm-12 text-center">
-        <form action="https://www.gigbuilder.com/cal/ny/fullhouseentertainment.nsf/checkdates" method="post" name="checkdate" class="form-inline" target="_blank">
-            <input type="hidden" name="service" value="0" />
-            <div class="form-group">
-                <select name="Month" class="form-control">
-                    <option value="0" disabled="disabled" selected="selected">Month</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                </select>
+    <h2 class="gold text-center"><em>Check Your Event Date</em></h2>
+
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <p>
+                Ready to plan your next big event? We're scheduling up for 2017 and want to help make your event a memorable one!
+            </p>
+            <div class="row padding-bottom-15">
+                <div class="col-sm-12 text-center">
+                    <form action="https://www.gigbuilder.com/cal/ny/fullhouseentertainment.nsf/checkdates" method="post" name="checkdate" class="form-inline" target="_blank">
+                        <input type="hidden" name="service" value="0" />
+                        <div class="form-group">
+                            <select name="Month" class="form-control">
+                                <option value="0" disabled="disabled" selected="selected">Month</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select name="Day" class="form-control">
+                                <option selected="selected" disabled="disabled">Day</option>
+                                @for (int i = 1; i <= 31; i++)
+                                {
+                                    <option>@i</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select name="Year" class="form-control">
+                                <option selected="selected" disabled="disabled">Year</option>
+                                @for (int i = 0; i < 4; i++)
+                                {
+                                    <option>@DateTime.Today.AddYears(i).Year</option>
+                                }
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-default">Check Availability</button>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <select name="Day" class="form-control">
-                    <option selected="selected" disabled="disabled">Day</option>
-                    @for (int i = 1; i <= 31; i++)
-                    {
-                        <option>@i</option>
-                    }
-                </select>
-            </div>
-            <div class="form-group">
-                <select name="Year" class="form-control">
-                    <option selected="selected" disabled="disabled">Year</option>
-                    @for (int i = 0; i < 4; i++)
-                    {
-                        <option>@DateTime.Today.AddYears(i).Year</option>
-                    }
-                </select>
-            </div>
-            <button type="submit" class="btn btn-default">Check Availability</button>
-        </form>
+        </div>
     </div>
-</div>
 }
 
 
 @section Testimonial{
-<div class="text-center">
-    <p>
-        <em>
-            Eric and Steve went above and beyond to create a beautiful experience for us. My husband's parents couldn't fly to our wedding due to a medical issue.
-            After we met with Eric a few days before the wedding Eric texted me with a wonderful idea. He and I arranged a surprise recorded toast from Jeff's parents.
-            It made the day so special for us. Plus, Jeff's parents felt included even from a distance.
-        </em>
-    </p>
-    <p>
-        <em>
-            We really appreciated the support and guidance in designing the sound of our wedding.
-        </em>
-    </p>
-    <p>
-        <em>
-            We also really appreciated Eric and Steve's professional, friendly personalities. They were the perfect choice for us.
-        </em>
-    </p>
-    <p>
-        <em>
-            Our wedding was an upscale family event in a historic venue. Having Eric and Steve guide us all through the day was so lovely.
-            Even family members who "don't dance" got out on the dance floor and had a fun time.
-        </em>
-    </p>
-</div>
-<div class="text-right">
-    - <strong><em>Amy, Bride 2016</em></strong>
-</div>
+    <div class="text-center">
+        <p>
+            <em>
+                Eric and Steve went above and beyond to create a beautiful experience for us. My husband's parents couldn't fly to our wedding due to a medical issue.
+                After we met with Eric a few days before the wedding Eric texted me with a wonderful idea. He and I arranged a surprise recorded toast from Jeff's parents.
+                It made the day so special for us. Plus, Jeff's parents felt included even from a distance.
+            </em>
+        </p>
+        <p>
+            <em>
+                We really appreciated the support and guidance in designing the sound of our wedding.
+            </em>
+        </p>
+        <p>
+            <em>
+                We also really appreciated Eric and Steve's professional, friendly personalities. They were the perfect choice for us.
+            </em>
+        </p>
+        <p>
+            <em>
+                Our wedding was an upscale family event in a historic venue. Having Eric and Steve guide us all through the day was so lovely.
+                Even family members who "don't dance" got out on the dance floor and had a fun time.
+            </em>
+        </p>
+    </div>
+    <div class="text-right">
+        - <strong><em>Amy, Bride 2016</em></strong>
+    </div>
 }
 
 <h1 class="gold text-center">@ViewBag.Title</h1>
@@ -128,9 +134,7 @@
     </p>
 }
 <p class="text-center">
-    Your wedding is the first of many adventures you will experience with your spouse.
-    At Full House Entertainment our expertise is reading a crowd and encouraging your guests to participate in your special day. 
-    From our first meeting through to your last dance, we promise personalized attention, with a professional host to guide the
-    activities of your day to a DJ that focuses on creating the mood you want to achieve for your wedding. 
-    Your a reception that will leave a lasting impression on your guests and provide you with memories for your lifetime of happiness!
+    Your wedding is the first of many adventures you will experience with your spouse. At Full House Entertainment our expertise is reading a crowd and encouraging your guests to participate
+    in your special day. From our first meeting, through to your last dance, we promise personalized attention, with a professional host to guide the activities of your day and a DJ that
+    focuses on creating the mood you want to achieve at your wedding. Your reception will leave a lasting impression on your guests and provide you with memories for your lifetime of happiness!
 </p>
