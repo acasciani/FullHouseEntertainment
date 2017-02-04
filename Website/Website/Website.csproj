@@ -141,6 +141,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\site\about\eric-min.jpg" />
+    <Content Include="Content\images\site\about\steve-min.jpg" />
     <Content Include="Content\images\site\awards\wnymea-min.jpg" />
     <Content Include="Content\images\site\carousel\1-min.jpg" />
     <Content Include="Content\images\site\carousel\2-min.jpg" />
@@ -233,6 +235,7 @@
     <Content Include="Views\Home\Awards.cshtml" />
     <Content Include="Views\Home\Affiliates.cshtml" />
     <Content Include="Views\Services\Rentals.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

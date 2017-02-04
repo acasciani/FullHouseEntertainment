@@ -296,9 +296,10 @@ ul.colored {
 	padding-left: 0px;
 }
 
-.body.inner .title-text img {
+.body.inner .title-text img, .about .title-text img {
 	border-radius: 100%;
     border: solid 2px rgba(255, 255, 255, 1);
+    max-width: 100%;
 }
 
 
