@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Full House Entertainment</title>
 
+    @if (IsSectionDefined("SEOMetaTags"))
+    {
+        @RenderSection("SEOMetaTags")
+    }
+    else
+    {
+        <meta name="description" content="Full House Entertainment is Upstate New York's premier entertainment specialists for weddings, photo booths, private parties, casinos, fundraising and more.">
+    }
+
     <!-- Bootstrap -->
     @Styles.Render("~/Content/css")
 
@@ -14,11 +23,29 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="~/favicon.ico" rel="shortcut icon">
 
-
     @RenderSection("styles", required: false)
 
+    <meta property="fb:app_id" content="392535901138304"/>
+    <meta property="fb:pages" content="FullHouseEntertainmentofRochesterNY"/>
+    @if (IsSectionDefined("SocialMediaTags"))
+    {
+        @RenderSection("SocialMediaTags")
+    }
+    else
+    {
+        // use default
+        <meta property="og:image" content="http://fullhouse-ent.com/Content/images/site/carousel/1-min.jpg" />
+        <meta property="og:title" content="@ViewBag.Title - Full House Entertainment" />
+        <meta property="og:url" content="@Request.Url.AbsoluteUri" />
+        <meta property="og:site_name" content="Full House Entertainment" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="Known as Upstate New York’s premier entertainment specialists, Full House Entertainment promises you the most unique night of your life. We pride ourselves on ensuring that you and your guests have FUN while we take care of the rest."/>
+    }
+
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
+
 <body>
     @{
         Html.RenderPartial("_TopCarousel");
