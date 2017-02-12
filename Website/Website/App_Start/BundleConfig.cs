@@ -8,6 +8,8 @@ namespace Website
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.UseCdn = true;
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -20,7 +22,7 @@ namespace Website
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/customScripts").Include(
-            "~/Scripts/custom/top-nav.js"));
+            "~/Scripts/custom/top-nav.js", "~/Scripts/jquery.blueimp-gallery.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
@@ -30,7 +32,10 @@ namespace Website
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css",
                       "~/Content/topcarousel.css",
-                      "~/Content/widget-customization.css"
+                      "~/Content/widget-customization.css",
+                      "~/Content/blueimp-gallery.min.css",
+                      "~/Content/Externals.css"
+                      
                       ));
         }
     }

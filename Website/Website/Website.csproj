@@ -141,6 +141,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Externals.css" />
     <Content Include="Content\images\site\about\eric-min.jpg" />
     <Content Include="Content\images\site\about\steve-min.jpg" />
     <Content Include="Content\images\site\awards\wnymea-min.jpg" />
@@ -207,6 +208,9 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\custom\top-nav.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="sitemap.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
